@@ -112,6 +112,33 @@ form#formulario #boton{
 	margin-left: 20px;
 }
 
+
+div#buscadorRetos{
+	background-color: #7bccc9;
+	margin: auto;
+	width: 200px;
+	padding: 20px 30px;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 5px 5px 8px #1e5e5b;
+	margin-top: 50px;
+}
+
+div#buscadorRetos #botonBuscar{
+	border: none;
+	background-color: white;
+	color: #1e5e5b;
+	font-weight: bold;
+	box-shadow: 3px 3px 6px #1e5e5b;
+	border-radius: 5px 5px 5px 5px;
+	padding: 5px;
+	text-align: center;
+	margin-left: 15px;
+}
+
+input#hidden{
+	visibility: hidden;
+}
+
 /* Comtenido del segundo div */
 
 div#contenedorTabla{

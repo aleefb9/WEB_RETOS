@@ -72,6 +72,13 @@
                         }
                     ?>
                 </select>
+                <br/><br/>
+
+                <label>¿Publicar ahora?</label><br/>
+                <select name="publicado">
+                    <option value="1">SI</option>
+                    <option value="0">NO</option>
+                </select>    
                 
                 <br/><br/>
                 <input id="boton" type="submit" name="enviar" value="enviar"/><br/><br/>
@@ -87,15 +94,15 @@
                     $iniReto=$_POST['iniReto'];
                     $finReto=$_POST['finReto'];
                     $fechaPublicacion=$_POST['fechaPublicacion'];
-                    $publicado=0;
+                    $publicado=$_POST['publicado'];
                     $profesor=$_POST['profesor'];
                     $categoria=$_POST['categoria'];
 
-                    if($nombre == "" || $dirigido == "" || $descripcion == "" || $iniInscripcion == "" || $iniInscripcion == "" || $finInscripcion == "" || $iniReto == "" || $finReto == "" || $fechaPublicacion == ""){
+                    if($nombre=="" || $dirigido=="" || $descripcion=="" || $iniInscripcion=="" || $iniInscripcion=="" || $finInscripcion=="" || $iniReto=="" || $finReto=="" || $fechaPublicacion==""){
                         echo '<p style="color:red">Debe introducir todos los campos</p>';
                     }
                     else{
-                        $resultado= $controlador->alta($nombre, $dirigido, $descripcion, $iniInscripcion, $finInscripcion, $iniReto, $finReto, $fechaPublicacion, $publicado, $profesor, $categoria);
+                        $resultado=$controlador->alta($nombre, $dirigido, $descripcion, $iniInscripcion, $finInscripcion, $iniReto, $finReto, $fechaPublicacion, $publicado, $profesor, $categoria);
                         echo '<p style="color:green">Se ha añadido correctamente el reto.</p>';
                     }
                 }		

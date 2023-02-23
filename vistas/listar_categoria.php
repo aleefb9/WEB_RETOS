@@ -29,7 +29,7 @@
 						$controlador=new controladorCategorias();
 						$resultado=$controlador->listar();
 
-						if($resultado!=''){ 
+						if($resultado->num_rows>0){ 
 							foreach($resultado as $mostrar){
 								echo '<tr>	
 										<td>'.$mostrar['id'].'</td>
@@ -43,9 +43,9 @@
 			</table>
 			<?php
 				}else{
-					echo "
+					echo '
 						<h1>No hay categorías</h1>
-					";
+					';
 				}
 			?>
 			<a href="alta_categoria.php"><p id="aniadir">AÑADIR CATEGORÍAS</p></a>

@@ -17,6 +17,11 @@
             return $resultado;
         }
 
+        public function listarFiltrado($categoria) {
+            $resultado=$this->modelo->listarFiltrado($categoria);
+            return $resultado;
+        }
+
          /**
          * Método del controlador que da de alta un nuevao reto
          */
@@ -48,16 +53,21 @@
         /**
          * Método del controlador que modifica el retos seleccionado
          */
-        public function modificar($id, $nombre){
-            $resultado=$this->modelo->modificar($id, $nombre);
-            return $resultado;
+        public function modificar($nuevoReto){
+            $resultado=$this->modelo->modificar($nuevoReto);
         }
 
+        /**
+         * Método del controlador que 
+         */
         public function detalles($id){  
             $resultado=$this->modelo->detalles($id);
             return $resultado;
         }
 
+        /**
+         * Método del controlador que 
+         */
         public function listarProfesor() {
             $resultado=$this->modelo->listarProfesor();
             return $resultado;

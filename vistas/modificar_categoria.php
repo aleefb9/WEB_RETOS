@@ -32,7 +32,7 @@
                         echo '<p style="color:red">No se ha introducido nungún valor para modificar.</p>';
                     }
                     else{
-                        $resultado= $controlador->modificar($id, $nuevoNombre);
+                        $resultado = $controlador->modificar($id, $nuevoNombre);
                         echo '<p style="color:green">Se ha modificado correctamente el nombre.</p>';
                     }
                 }

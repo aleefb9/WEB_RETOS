@@ -28,6 +28,16 @@
             return $resultado;
         }
 
+        /**
+         * Método del modelo que lista los retos filtrnado por categorias
+         */
+        public function listarFiltrado($categoria){
+            $sql = "SELECT * FROM retos WHERE idCategoria = $categoria;";
+
+            $resultado = $this->conexion->query($sql);
+            return $resultado;
+        }
+
           /**
          * Método del modelo que da de alta un nuevo reto
          */
@@ -62,23 +72,30 @@
         /**
          * Método del modelo que modifica el reto seleccionada
          */
-        public function modificar($id, $nombre){
-            $sql = 'UPDATE categorias 
-                    SET nombre = "'.$nombre.'"
-                    WHERE id = '.$id.';';
+        public function modificar($nuevoReto){
+            $sql = 'UPDATE retos SET nombre="'.$nuevoReto['nombre'].'", dirigido="'.$nuevoReto['dirigido'].'", descripcion="'.$nuevoReto['descripcion'].'", fechaInicioInscripcion="'.$nuevoReto['iniInscripcion'].'", fechaFinInscripcion="'.$nuevoReto['finInscripcion'].'", fechaInicioReto="'.$nuevoReto['iniReto'].'", fechaFinReto="'.$nuevoReto['finReto'].'", fechaPublicacion="'.$nuevoReto['fechaPublicacion'].'", publicado='.$nuevoReto['publicado'].', idProfesor='.$nuevoReto['profesor'].', idCategoria='.$nuevoReto['categoria'].'  WHERE id='.$nuevoReto['id'].';';
                     
             $resultado = $this->conexion->query($sql);
 
             return $resultado;
         }
 
+        /**
+         * Método del modelo que consulta los datos de los retos en la vista detalles
+         */
         public function detalles($id){                
-            $sql = "SELECT * FROM retos WHERE id=$id;";
+            $sql = "SELECT *, retos.nombre AS nombreReto, categorias.nombre AS nombreCat, profesores.nombre AS nombreProf FROM retos 
+                    INNER JOIN categorias ON retos.idCategoria = categorias.id
+                    INNER JOIN profesores ON retos.idProfesor = profesores.id
+                    WHERE retos.id=$id;";
             $resultado = $this->conexion->query($sql);
 
             return $resultado;
         }
 
+        /**
+         * Método del modelo que lista los profesores de la base de datos
+         */
         public function listarProfesor(){
             $sql = "SELECT * FROM profesores;";
             $resultado = $this->conexion->query($sql);

@@ -19,15 +19,21 @@
 						echo '
                             <h1 id="tituloReto">RETO '.$mostrar['nombre'].'</h1>
 
-                            <span>NOMBRE:</span> '.$mostrar['nombre'].'<br/>
+                            <span>NOMBRE:</span> '.$mostrar['nombreReto'].'<br/>
                             <span>DIRIGIDO:</span> '.$mostrar['dirigido'].'<br/>
                             <span>DESCRIPCIÓN:</span> '.$mostrar['descripcion'].'<br/>
                             <span>FECHA INSCRIPCIÓN:</span> '.$mostrar['fechaInicioInscripcion'].' - '.$mostrar['fechaFinInscripcion'].'<br/>
                             <span>FECHA RETO:</span> '.$mostrar['fechaInicioReto'].' - '.$mostrar['fechaFinReto'].'<br/>
-                            <span>FECHA PUBLICACIÓN:</span> '.$mostrar['fechaPublicacion'].'<br/>
-                            <span>PROFESOR ENCARGADO:</span> '.$mostrar['idProfesor'].'<br/>
-                            <span>PERTENECE A LA CATEGORÍA:</span> '.$mostrar['idCategoria'].'<br/><br/>
+                            <span>PROFESOR ENCARGADO:</span> '.$mostrar['nombreProf'].'<br/>
+                            <span>PERTENECE A LA CATEGORÍA:</span> '.$mostrar['nombreCat'].'<br/><br/>';
 
+                        if($mostrar['publicado']==0){
+                            echo '<span>PUBLICADO:</span> NO<br/><br/>';
+                        }else{
+                            echo '<span>PUBLICADO:</span> SI<br/><br/>';
+                        }
+                        
+                        echo'
                             <div id="botonesDetalles">
                                 <a href="listar_reto.php"><span class="volver">VOLVER</span></a>
                                 <a href="confirmar_borrar_reto.php?id='.$mostrar['id'].'&nombre='.$mostrar['nombre'].'"><span class="volver">BORRAR</span></a>
