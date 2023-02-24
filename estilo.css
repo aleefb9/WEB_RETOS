@@ -43,6 +43,24 @@ nav a{
 	color: aliceblue;
 }
 
+div#introduccion{
+	background-color: #7bccc9;
+	margin: auto;
+	width: 450px;
+	padding: 10px 20px;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 5px 5px 8px #1e5e5b;
+	margin-top: 130px;
+	color: white;
+	font-size: large;
+	text-align: center;
+}
+
+span#intro{
+	color: #133f3d;
+	font-weight: bold;
+}
+
 /* Comtenido del primer div */
 
 div#contenedorFormulario #titulo{
@@ -116,8 +134,8 @@ form#formulario #boton{
 div#buscadorRetos{
 	background-color: #7bccc9;
 	margin: auto;
-	width: 200px;
-	padding: 20px 30px;
+	width: 250px;
+	padding: 10px 20px;
 	border-radius: 5px 5px 5px 5px;
 	box-shadow: 5px 5px 8px #1e5e5b;
 	margin-top: 50px;
@@ -138,6 +156,53 @@ div#buscadorRetos #botonBuscar{
 input#hidden{
 	visibility: hidden;
 }
+
+div.confirmarBorrado{
+	background-color: #7bccc9;
+	margin: auto;
+	width: 400px;
+	padding: 10px 20px;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 5px 5px 8px #1e5e5b;
+	margin-top: 50px;
+	text-align: center;
+}
+
+div.confirmarBorrado{
+	background-color: #7bccc9;
+	margin: auto;
+	width: 400px;
+	padding: 10px 20px;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 5px 5px 8px #1e5e5b;
+	margin-top: 50px;
+	text-align: center;
+}
+
+#btnCancelar{
+	border: none;
+	background-color: white;
+	color: #1e5e5b;
+	font-weight: bold;
+	box-shadow: 3px 3px 6px #1e5e5b;
+	border-radius: 5px 5px 5px 5px;
+	padding: 5px;
+	text-align: center;
+	text-decoration: none;
+}
+#btnEliminar{
+	border: none;
+	background-color: rgb(255, 0, 0);
+	color: #ffffff;
+	font-weight: bold;
+	box-shadow: 3px 3px 6px #1e5e5b;
+	border-radius: 5px 5px 5px 5px;
+	padding: 5px;
+	text-align: center;
+	margin-left: 15px;
+	text-decoration: none;
+}
+
 
 /* Comtenido del segundo div */
 

@@ -17,7 +17,7 @@
                     
 					foreach($resultado as $mostrar){
 						echo '
-                            <h1 id="tituloReto">RETO '.$mostrar['nombre'].'</h1>
+                            <h1 id="tituloReto">RETO '.$mostrar['nombreReto'].'</h1>
 
                             <span>NOMBRE:</span> '.$mostrar['nombreReto'].'<br/>
                             <span>DIRIGIDO:</span> '.$mostrar['dirigido'].'<br/>
@@ -36,8 +36,8 @@
                         echo'
                             <div id="botonesDetalles">
                                 <a href="listar_reto.php"><span class="volver">VOLVER</span></a>
-                                <a href="confirmar_borrar_reto.php?id='.$mostrar['id'].'&nombre='.$mostrar['nombre'].'"><span class="volver">BORRAR</span></a>
-                                <a href="modificar_reto.php?id='.$mostrar['id'].'"><span class="volver">MODIFICAR</span></a>
+                                <a href="confirmar_borrar_reto.php?id='.$mostrar['idReto'].'&nombre='.$mostrar['nombreReto'].'"><span class="volver">BORRAR</span></a>
+                                <a href="modificar_reto.php?id='.$mostrar['idReto'].'"><span class="volver">MODIFICAR</span></a>
                             </div>
                         ';
 					}

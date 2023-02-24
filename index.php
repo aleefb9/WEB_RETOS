@@ -11,8 +11,12 @@
                 <h1>WEB RETOS</h1>
 		</header>
 		<nav>
+			<a href="index.php"><span>INICIO</span></a>
 			<a href="vistas/listar_reto.php"><span>Retos</span></a>
 			<a href="vistas/listar_categoria.php"><span>Categorías disponibles</span></a>
 		</nav>
+		<div id="introduccion">
+			<p>Sea <span id="intro">BIENVENIDO</span> a la web de gestión de retos de la Ecuela Virgen de Guadalupe</p>
+		</div>
     </body>
 </html>

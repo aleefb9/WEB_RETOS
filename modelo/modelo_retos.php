@@ -84,10 +84,11 @@
          * Método del modelo que consulta los datos de los retos en la vista detalles
          */
         public function detalles($id){                
-            $sql = "SELECT *, retos.nombre AS nombreReto, categorias.nombre AS nombreCat, profesores.nombre AS nombreProf FROM retos 
+            $sql = "SELECT *, retos.id AS idReto, retos.nombre AS nombreReto, categorias.nombre AS nombreCat, profesores.nombre AS nombreProf FROM retos 
                     INNER JOIN categorias ON retos.idCategoria = categorias.id
                     INNER JOIN profesores ON retos.idProfesor = profesores.id
                     WHERE retos.id=$id;";
+                    
             $resultado = $this->conexion->query($sql);
 
             return $resultado;

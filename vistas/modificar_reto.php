@@ -2,9 +2,7 @@
     /**
      * Enviamos datos al metodo modificar del controlador, si detecta un nombre.
      */
-    if(isset($_POST['nombre'])){
-        
-    }
+
 ?>
 
 <html>

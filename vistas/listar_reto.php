@@ -11,10 +11,12 @@
 			<h1>WEB RETOS</h1>
 		</header>
 		<nav>
+			<a href="../index.php"><span>INICIO</span></a>
             <a href="listar_reto.php"><span>Retos</span></a>
 			<a href="listar_categoria.php"><span>Categorías disponibles</span></a>
 		</nav>
 		<div id="buscadorRetos">
+			<p>BUSCAR POR CATEGORIAS</p>
 			<form method="post" action="listar_reto.php">
 				<select name="categoria">
 					<option value="">Todos</option>

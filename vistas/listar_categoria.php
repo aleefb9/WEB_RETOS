@@ -11,6 +11,7 @@
                 <h1>WEB RETOS</h1>
 		</header>
 		<nav>
+			<a href="../index.php"><span>INICIO</span></a>
 			<a href="listar_reto.php"><span>Retos</span></a>
 			<a href="listar_categoria.php"><span>Categorías disponibles</span></a>
 		</nav>
