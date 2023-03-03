@@ -58,15 +58,23 @@
         }
 
         /**
-         * Método del controlador que 
+         * Método del controlador que nos muestras la vista detallada
          */
         public function detalles($id){  
             $resultado=$this->modelo->detalles($id);
             return $resultado;
         }
-
+        
         /**
          * Método del controlador que 
+         */
+        public function listarPdf(){  
+            $resultado=$this->modelo->listarPdf();
+            return $resultado;
+        }
+
+        /**
+         * Método del controlador que lista los profesores
          */
         public function listarProfesor() {
             $resultado=$this->modelo->listarProfesor();

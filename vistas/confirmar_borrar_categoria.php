@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['id'])) {
+        require_once('../index.php');
+    }
+?>
 <html>
 	<head>
 		<meta charset=utf-8 />

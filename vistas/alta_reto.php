@@ -1,4 +1,11 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['id'])) {
+        require_once('../index.php');
+    }
+
+    $idProfesor=$_SESSION['id'];
+
     require_once('../controlador/controlador_retos.php');
     $controlador=new controladorRetos();
 ?>
@@ -60,20 +67,6 @@
                 </select>
                 <br/><br/>
 
-                <label>Profesor:</label><br/>
-                <select name="profesor">
-                    <?php
-                        require_once('../controlador/controlador_retos.php');
-                        $controlador=new controladorRetos();
-                        $resultado=$controlador->listarProfesor();
-
-                        foreach($resultado as $mostrar){
-                            echo '<option value="'.$mostrar['id'].'">'.$mostrar['nombre'].'</option>';
-                        }
-                    ?>
-                </select>
-                <br/><br/>
-
                 <label>¿Publicar ahora?</label><br/>
                 <select name="publicado">
                     <option value="1">SI</option>
@@ -84,6 +77,9 @@
                 <input id="boton" type="submit" name="enviar" value="enviar"/><br/><br/>
             </form>
             <?php
+                require_once('../controlador/controlador_retos.php');
+                $controlador=new controladorRetos();
+                
                 if(isset($_POST['nombre'])){
                     
                     $nombre=$_POST['nombre'];
@@ -95,10 +91,10 @@
                     $finReto=$_POST['finReto'];
                     $fechaPublicacion=$_POST['fechaPublicacion'];
                     $publicado=$_POST['publicado'];
-                    $profesor=$_POST['profesor'];
+                    $profesor=$idProfesor;
                     $categoria=$_POST['categoria'];
 
-                    if($nombre=="" || $dirigido=="" || $descripcion=="" || $iniInscripcion=="" || $iniInscripcion=="" || $finInscripcion=="" || $iniReto=="" || $finReto=="" || $fechaPublicacion==""){
+                    if($nombre=="" || $dirigido=="" || $descripcion==""){
                         echo '<p style="color:red">Debe introducir todos los campos</p>';
                     }
                     else{

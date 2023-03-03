@@ -7,6 +7,10 @@
          */
         function __construct(){
             $this->conexion = $this->conectar();
+
+            if(isset($_SESSION['id'])){
+                $this->idProfesor=$_SESSION['id'];
+            }
         }
 
          /**
@@ -23,16 +27,18 @@
          * Método del modelo que lista los retos
          */
         public function listar(){
-            $sql = "SELECT * FROM retos;";
+            $sql = "SELECT * FROM retos WHERE idProfesor=".$this->idProfesor.";";
             $resultado = $this->conexion->query($sql);
             return $resultado;
         }
 
         /**
-         * Método del modelo que lista los retos filtrnado por categorias
+         * Método del modelo que lista los retos filtranado por categorias
          */
         public function listarFiltrado($categoria){
-            $sql = "SELECT * FROM retos WHERE idCategoria = $categoria;";
+            $sql = "SELECT * FROM retos 
+                    WHERE idCategoria = $categoria 
+                    AND idProfesor=".$this->idProfesor.";";
 
             $resultado = $this->conexion->query($sql);
             return $resultado;
@@ -73,7 +79,7 @@
          * Método del modelo que modifica el reto seleccionada
          */
         public function modificar($nuevoReto){
-            $sql = 'UPDATE retos SET nombre="'.$nuevoReto['nombre'].'", dirigido="'.$nuevoReto['dirigido'].'", descripcion="'.$nuevoReto['descripcion'].'", fechaInicioInscripcion="'.$nuevoReto['iniInscripcion'].'", fechaFinInscripcion="'.$nuevoReto['finInscripcion'].'", fechaInicioReto="'.$nuevoReto['iniReto'].'", fechaFinReto="'.$nuevoReto['finReto'].'", fechaPublicacion="'.$nuevoReto['fechaPublicacion'].'", publicado='.$nuevoReto['publicado'].', idProfesor='.$nuevoReto['profesor'].', idCategoria='.$nuevoReto['categoria'].'  WHERE id='.$nuevoReto['id'].';';
+            $sql = 'UPDATE retos SET nombre="'.$nuevoReto['nombre'].'", dirigido="'.$nuevoReto['dirigido'].'", descripcion="'.$nuevoReto['descripcion'].'", fechaInicioInscripcion="'.$nuevoReto['iniInscripcion'].'", fechaFinInscripcion="'.$nuevoReto['finInscripcion'].'", fechaInicioReto="'.$nuevoReto['iniReto'].'", fechaFinReto="'.$nuevoReto['finReto'].'", fechaPublicacion="'.$nuevoReto['fechaPublicacion'].'", publicado='.$nuevoReto['publicado'].', idCategoria='.$nuevoReto['categoria'].'  WHERE id='.$nuevoReto['id'].';';
                     
             $resultado = $this->conexion->query($sql);
 
@@ -88,6 +94,21 @@
                     INNER JOIN categorias ON retos.idCategoria = categorias.id
                     INNER JOIN profesores ON retos.idProfesor = profesores.id
                     WHERE retos.id=$id;";
+                    
+            $resultado = $this->conexion->query($sql);
+
+            return $resultado;
+        }
+
+
+        /**
+         * Método del modelo que hace la consulta para listar los retos en el pdf
+         */
+        public function listarPdf(){                
+            $sql = "SELECT *, retos.id AS idReto, retos.nombre AS nombreReto, categorias.nombre AS nombreCat
+                    FROM retos 
+                    INNER JOIN categorias ON retos.idCategoria = categorias.id
+                    WHERE retos.idCategoria = categorias.id;";
                     
             $resultado = $this->conexion->query($sql);
 

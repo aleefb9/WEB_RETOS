@@ -1,8 +1,8 @@
-<?php 
-    /**
-     * Enviamos datos al metodo modificar del controlador, si detecta un nombre.
-     */
-
+<?php
+    session_start();
+    if(!isset($_SESSION['id'])) {
+        require_once('../index.php');
+    }
 ?>
 
 <html>
@@ -88,27 +88,11 @@
                 </select>
                 <br/><br/>
 
-                <label>Profesor:</label><br/>
-                <select name="profesor">
-                    <?php
-                        require_once('../controlador/controlador_retos.php');
-                        $controlador=new controladorRetos();
-                        $resultado=$controlador->listarProfesor();
-
-                        while($fila=$resultado->fetch_assoc()){
-							if($idProfesor==$fila['id']){
-                                echo '<option selected value="'.$fila['id'].'">'.$fila['nombre'].'</option>';
-                            }else{
-                                echo '<option value="'.$fila['id'].'">'.$fila['nombre'].'</option>';
-                            }
-                        }
-                    ?>
-                </select>
-                <br/><br/>
-
                 <label>¿Publicar ahora?</label><br/>
                 <select name="publicado">
                     <?php
+                        require_once('../controlador/controlador_retos.php');
+                        $controlador=new controladorRetos();
                         if($publicado==1){
                             echo '<option selected value="1">SI</option>
                                     <option value="0">NO</option>';
@@ -136,7 +120,6 @@
                     $finReto=$_POST['finReto'];
                     $fechaPublicacion=$_POST['fechaPublicacion'];
                     $publicado=$_POST['publicado'];
-                    $profesor=$_POST['profesor'];
                     $categoria=$_POST['categoria'];
 
                     if($nombre=="" || $dirigido=="" || $descripcion=="" || $iniInscripcion=="" || $iniInscripcion=="" || $finInscripcion=="" || $iniReto=="" || $finReto=="" || $fechaPublicacion==""){

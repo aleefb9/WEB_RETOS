@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['id'])) {
+        require_once('../index.php');
+    }
+
     require_once('../controlador/controlador_categorias.php');
     $controlador=new controladorCategorias();
     
