@@ -25,13 +25,14 @@
         public function login($correo, $contrasenia){
             $this->conectar();
             $sql= "SELECT * FROM profesores WHERE correo=? AND password=?;";
+            
             $resultado = $this->conexion->prepare($sql);
             $resultado->bind_param("ss", $correo, $contrasenia);
             $resultado->execute();
             $obj=$resultado->get_result();
             
             if($obj->num_rows>0){
-                $fila = $obj ->fetch_assoc();
+                $fila=$obj->fetch_assoc();
                 return $fila['id'];
             }
             else{

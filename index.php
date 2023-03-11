@@ -20,13 +20,15 @@
 		</header>
 		<nav>
 			<a href="index.php"><span>INICIO</span></a>
-			<a href="vistas/listar_reto.php"><span>Retos</span></a>
-			<a href="vistas/listar_categoria.php"><span>Categorías disponibles</span></a>
+			<a href="vistas/listar_reto.php"><span>Mis retos</span></a>
+			<a href="vistas/retos_general.php"><span>Retos</span></a>
+			<a href="vistas/listar_categoria.php"><span>Categorías</span></a>
 			<a href="vistas/fpdf.php"><span>PDF</span></a>
 		</nav>
 		<div id="introduccion">
 			<p>Sea <span id="intro">BIENVENIDO</span> a la web de gestión de retos de la Ecuela Virgen de Guadalupe</p>
 		</div>
+		<a id="importar" href="./vistas/subir_profesores.php">Importar profesores</a>
     </body>
 </html>
 <?php 

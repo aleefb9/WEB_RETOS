@@ -20,7 +20,7 @@
     <body>
         <div id="contenedorFormularioRetos">	
             <h2 id="titulo">Alta de Retos</h2>
-            <form action="" method="post" id="formulario">
+            <form action="" method="post" id="formulario" enctype="multipart/form-data">
                 <label>Nombre:</label><br/>
                 <input type="text" name="nombre">
                 <br/><br/>
@@ -71,7 +71,7 @@
                 <select name="publicado">
                     <option value="1">SI</option>
                     <option value="0">NO</option>
-                </select>    
+                </select> 
                 
                 <br/><br/>
                 <input id="boton" type="submit" name="enviar" value="enviar"/><br/><br/>
@@ -81,7 +81,7 @@
                 $controlador=new controladorRetos();
                 
                 if(isset($_POST['nombre'])){
-                    
+
                     $nombre=$_POST['nombre'];
                     $dirigido=$_POST['dirigido'];
                     $descripcion=$_POST['descripcion'];
@@ -98,10 +98,11 @@
                         echo '<p style="color:red">Debe introducir todos los campos</p>';
                     }
                     else{
-                        $resultado=$controlador->alta($nombre, $dirigido, $descripcion, $iniInscripcion, $finInscripcion, $iniReto, $finReto, $fechaPublicacion, $publicado, $profesor, $categoria);
                         echo '<p style="color:green">Se ha añadido correctamente el reto.</p>';
+                        
+                        $resultado=$controlador->alta($nombre, $dirigido, $descripcion, $iniInscripcion, $finInscripcion, $iniReto, $finReto, $fechaPublicacion, $publicado, $profesor, $categoria, $archivo);
                     }
-                }		
+                }	
             ?>
             <a href="listar_reto.php"><p class="volver">VOLVER</p></a>
         </div>

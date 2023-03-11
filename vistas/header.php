@@ -13,7 +13,8 @@
 		</header>
 		<nav>
 			<a href="../index.php"><span>INICIO</span></a>
-            <a href="listar_reto.php"><span>Retos</span></a>
+            <a href="listar_reto.php"><span>Mis retos</span></a>
+			<a href="retos_general.php"><span>Retos</span></a>
 			<a href="listar_categoria.php"><span>Categorías</span></a>
 			<a href="fpdf.php"><span>PDF</span></a>
 		</nav>

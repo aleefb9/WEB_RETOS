@@ -102,6 +102,20 @@ div#contenedorFormularioRetos form #boton{
 	margin: auto;
 }
 
+#importar{
+	float: right;
+	margin-top: 300px;
+	margin-left: 30px;
+	border: none;
+	background-color: #1e5e5b;
+	color: white;
+	font-weight: bold;
+	box-shadow: 3px 3px 6px #38a39e88;
+	border-radius: 5px 5px 5px 5px;
+	padding: 5px;
+	text-decoration: none;
+}
+
 /* Estilos del formulario */
 
 div#contenedorFormulario #formulario{
@@ -223,6 +237,7 @@ div#formularioLogin{
 	border-radius: 5px 5px 5px 5px;
 	box-shadow: 5px 5px 8px #1e5e5b;
 	margin-top: 200px;
+	text-align: center;
 }
 
 div#formularioLogin p, h1{
@@ -232,6 +247,12 @@ div#formularioLogin p, h1{
 div#formularioLogin form{
 	width: 340px;
 	margin: auto;
+}
+
+#imagenDetalle{
+	margin: auto;
+	display: block;
+	margin-bottom: 20px;
 }
 
 div#formularioLogin form #botonInicio{
@@ -254,6 +275,16 @@ div#contenedorTabla{
 	background-color: #7bccc9;
 	margin: auto;
 	width: 420px;
+	padding: 20px 30px;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 5px 5px 8px #1e5e5b;
+	margin-top: 50px;
+}
+
+div#contenedorTablaRetos{
+	background-color: #7bccc9;
+	margin: auto;
+	width: 800px;
 	padding: 20px 30px;
 	border-radius: 5px 5px 5px 5px;
 	box-shadow: 5px 5px 8px #1e5e5b;
@@ -296,9 +327,16 @@ div#contenedorTabla table{
 	border-collapse: collapse;
 }
 
+div#contenedorTablaRetos table{
+	background-color: white;
+	margin: auto;
+	border-collapse: collapse;
+}
+
 table th, td, tr{
 	border: 1px solid #1e5e5b;
 	padding: 5px;
+	text-align: center;
 }
 
 table thead{

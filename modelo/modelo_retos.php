@@ -32,6 +32,15 @@
             return $resultado;
         }
 
+           /**
+         * Método del modelo que lista los retos
+         */
+        public function listarGeneral(){
+            $sql = "SELECT * FROM retos WHERE publicado=1;";
+            $resultado = $this->conexion->query($sql);
+            return $resultado;
+        }
+
         /**
          * Método del modelo que lista los retos filtranado por categorias
          */
@@ -44,15 +53,21 @@
             return $resultado;
         }
 
-          /**
+        /**
          * Método del modelo que da de alta un nuevo reto
          */
-        public function alta($nombre, $dirigido, $descripcion, $iniInscripcion, $finInscripcion, $iniReto, $finReto, $fechaPublicacion, $publicado, $profesor, $categoria){
-            $sql = "INSERT INTO retos(nombre, dirigido, descripcion, fechaInicioInscripcion, fechaFinInscripcion, fechaInicioReto, fechaFinReto, fechaPublicacion, publicado, idProfesor, idCategoria) 
-                    VALUES('".$nombre."','".$dirigido."','".$descripcion."','".$iniInscripcion."','".$finInscripcion."','".$iniReto."','".$finReto."','".$fechaPublicacion."', $publicado, '".$profesor."','".$categoria."');";
+        public function alta($nombre, $dirigido, $descripcion, $iniInscripcion, $finInscripcion, $iniReto, $finReto, $fechaPublicacion, $publicado, $profesor, $categoria, $archivo){
+            $sql = "INSERT INTO retos(nombre, dirigido, descripcion, fechaInicioInscripcion, fechaFinInscripcion, fechaInicioReto, fechaFinReto, fechaPublicacion, publicado, idProfesor, idCategoria, archivo) 
+                    VALUES('".$nombre."','".$dirigido."','".$descripcion."','".$iniInscripcion."','".$finInscripcion."','".$iniReto."','".$finReto."','".$fechaPublicacion."', $publicado, '".$profesor."','".$categoria."', '".$archivo."');";
 
-            $resultado = $this->conexion->query($sql);
-            return $resultado;
+            // try{
+            //     $resultado = $this->conexion->query($sql);
+            //     return $resultado;
+            // }
+            // catch(Exception $error){
+            //     $error=$this->conexion->errno;
+            //     return 'error';
+            // } 
         }
 
          /**

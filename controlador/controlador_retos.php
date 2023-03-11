@@ -10,13 +10,24 @@
         }
 
         /**
-         * Método del controlador que lista los retos
+         * Método del controlador que lista los retos del profesor que haya iniciado sesion
          */
         public function listar() {
             $resultado=$this->modelo->listar();
             return $resultado;
         }
 
+        /**
+         * Método del controlador que lista todos los retos
+         */
+        public function listarGeneral() {
+            $resultado=$this->modelo->listarGeneral();
+            return $resultado;
+        }
+
+        /**
+         * Método del controlador que lista los retos cuando se aplica el filtro
+         */
         public function listarFiltrado($categoria) {
             $resultado=$this->modelo->listarFiltrado($categoria);
             return $resultado;
@@ -25,8 +36,16 @@
          /**
          * Método del controlador que da de alta un nuevao reto
          */
-        public function alta($nombre, $dirigido, $descripcion, $iniInscripcion, $finInscripcion, $iniReto, $finReto, $fechaPublicacion, $publicado, $profesor, $categoria) {
-            $this->modelo->alta($nombre, $dirigido, $descripcion, $iniInscripcion, $finInscripcion, $iniReto, $finReto, $fechaPublicacion, $publicado, $profesor, $categoria);
+        public function alta($nombre, $dirigido, $descripcion, $iniInscripcion, $finInscripcion, $iniReto, $finReto, $fechaPublicacion, $publicado, $profesor, $categoria, $archivo) {
+            $reto=$this->modelo->alta($nombre, $dirigido, $descripcion, $iniInscripcion, $finInscripcion, $iniReto, $finReto, $fechaPublicacion, $publicado, $profesor, $categoria, $archivo);
+
+            // if($reto=='error'){
+            //     header('Location: error.php');
+            //     exit;
+            // }
+            // else{
+            //     return $reto;
+            // }
         }
 
          /**

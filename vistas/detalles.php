@@ -33,19 +33,19 @@
                             <span>PROFESOR ENCARGADO:</span> '.$mostrar['nombreProf'].'<br/>
                             <span>PERTENECE A LA CATEGORÍA:</span> '.$mostrar['nombreCat'].'<br/><br/>';
 
-                        if($mostrar['publicado']==0){
-                            echo '<span>PUBLICADO:</span> NO<br/><br/>';
-                        }else{
-                            echo '<span>PUBLICADO:</span> SI<br/><br/>';
-                        }
-                        
-                        echo'
-                            <div id="botonesDetalles">
-                                <a href="listar_reto.php"><span class="volver">VOLVER</span></a>
-                                <a href="confirmar_borrar_reto.php?id='.$mostrar['idReto'].'&nombre='.$mostrar['nombreReto'].'"><span class="volver">BORRAR</span></a>
-                                <a href="modificar_reto.php?id='.$mostrar['idReto'].'"><span class="volver">MODIFICAR</span></a>
-                            </div>
-                        ';
+                            if($mostrar['publicado']==0){
+                                echo '<span>PUBLICADO:</span> NO<br/><br/>';
+                            }else{
+                                echo '<span>PUBLICADO:</span> SI<br/><br/>';
+                            }
+                            
+                            echo'
+                                <div id="botonesDetalles">
+                                    <a href="listar_reto.php"><span class="volver">VOLVER</span></a>
+                                    <a href="confirmar_borrar_reto.php?id='.$mostrar['idReto'].'&nombre='.$mostrar['nombreReto'].'"><span class="volver">BORRAR</span></a>
+                                    <a href="modificar_reto.php?id='.$mostrar['idReto'].'"><span class="volver">MODIFICAR</span></a>
+                                </div>
+                            ';
 					}
 				?>
 		</div>
